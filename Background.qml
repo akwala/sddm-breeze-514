@@ -23,6 +23,8 @@ FocusScope {
     id: sceneBackground
 
     property var sceneBackgroundType
+    property var sceneBackgroundImageFillType
+    property var sceneBackgroundImageFillMode: eval("Image." + sceneBackgroundImageFillType)
     property alias sceneBackgroundColor: sceneColorBackground.color
     property alias sceneBackgroundImage: sceneImageBackground.source
 
@@ -34,7 +36,7 @@ FocusScope {
     Image {
         id: sceneImageBackground
         anchors.fill: parent
-        fillMode: Image.PreserveAspectCrop
+        fillMode: sceneBackgroundImageFillMode
         smooth: true;
     }
 
@@ -44,7 +46,7 @@ FocusScope {
             when: sceneBackgroundType == "image"
             PropertyChanges {
                 target: sceneColorBackground
-                visible: false
+                visible: true
             }
             PropertyChanges {
                 target: sceneImageBackground
