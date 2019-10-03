@@ -26,7 +26,7 @@ ColumnLayout {
     id: clock
     Label {
         text: Qt.formatTime(timeSource.data["Local"]["DateTime"])
-        font.pointSize: config.ClockSize || "48" 
+        font.pointSize: config.ClockSize || "48"
         font.family: config.Font || "Noto Sans"
         font.hintingPreference: config.FontHinting || "PreferDefaultHinting"
         Layout.alignment: Qt.AlignHCenter
